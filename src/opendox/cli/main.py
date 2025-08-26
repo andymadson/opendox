@@ -2,6 +2,7 @@
 import sys
 from pathlib import Path
 from typing import Optional
+from opendox.core.pipeline import DocumentationPipeline
 
 import typer
 from rich.console import Console
@@ -65,37 +66,26 @@ def init(
     console.print("📦 Repository validation... [dim](coming soon)[/dim]")
 
 @app.command()
+@app.command()
 def generate(
-    path: Path = typer.Argument(
-        Path("."),
-        help="Path to repository"
-    ),
-    incremental: bool = typer.Option(
-        False,
-        "--incremental", "-i",
-        help="Only update changed files"
-    ),
-    verbose: bool = typer.Option(
-        False,
-        "--verbose", "-v",
-        help="Show detailed output"
-    ),
+    path: Path = typer.Argument(Path("."), help="Repository path"),
+    output: Path = typer.Option(Path("./docs"), "--output", "-o", help="Output directory"),
+    model: str = typer.Option("deepseek-coder:1.3b", "--model", "-m", help="LLM model to use"),
+    max_files: int = typer.Option(10, "--max-files", help="Maximum files to process"),
 ):
     """Generate documentation from code."""
-    with Progress(
-        SpinnerColumn(),
-        TextColumn("[progress.description]{task.description}"),
-        console=console,
-    ) as progress:
-        task = progress.add_task("[cyan]Analyzing repository...", total=None)
-        
-        # TODO: Implement actual generation
-        import time
-        time.sleep(2)  # Simulate work
-        
-        progress.update(task, description="[green]✓ Analysis complete")
+    console.print(f"[bold blue]Generating documentation...[/bold blue]")
+    console.print(f"Source: {path}")
+    console.print(f"Output: {output}")
+    console.print(f"Model: {model}")
     
-    console.print("[bold green]Documentation generation complete![/bold green]")
+    from opendox.core.pipeline import DocumentationPipeline
+    
+    pipeline = DocumentationPipeline(model=model)
+    pipeline.generate(path, output, max_files=max_files)
+    
+    console.print(f"[bold green]Documentation generated in {output}[/bold green]")
+    console.print(f"Run 'mkdocs serve' in {output} to view")
 
 @app.command()
 def serve(

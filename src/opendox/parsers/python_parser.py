@@ -1,4 +1,4 @@
-﻿"""Python code parser using AST."""
+"""Python code parser using AST."""
 import ast
 from pathlib import Path
 from typing import Any, Dict, List
