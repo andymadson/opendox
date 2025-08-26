@@ -1,4 +1,4 @@
-﻿"""Configuration management for OPENDOX."""
+"""Configuration management for OPENDOX."""
 from pathlib import Path
 from typing import List, Optional
 

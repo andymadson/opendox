@@ -1,4 +1,4 @@
-﻿"""OPENDOX CLI - Main entry point for the documentation generator."""
+"""OPENDOX CLI - Main entry point for the documentation generator."""
 import sys
 from pathlib import Path
 from typing import Optional

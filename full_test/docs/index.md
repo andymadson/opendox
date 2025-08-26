@@ -1,3 +1,0 @@
-# opendox
-
-Documentation for opendox

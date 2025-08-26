@@ -1,4 +1,4 @@
-﻿"""Discover and filter source files in a repository."""
+"""Discover and filter source files in a repository."""
 from pathlib import Path
 from typing import List, Set
 

@@ -38,11 +38,14 @@ class PythonParser(BaseParser):
             "total_lines": len(content.splitlines()),
         }
     
+    # src/opendox/parsers/python_parser.py
+# Replace the simplified version with full implementation
+
     def extract_functions(self, tree: ast.AST) -> List[CodeElement]:
-        """Extract all function definitions."""
+        """Extract all function definitions with full details."""
         functions = []
         for node in ast.walk(tree):
-            if isinstance(node, ast.FunctionDef):
+            if isinstance(node, ast.FunctionDef or ast.AsyncFunctionDef):
                 element = CodeElement(
                     name=node.name,
                     type="function",
@@ -52,13 +55,21 @@ class PythonParser(BaseParser):
                     signature=self._get_function_signature(node),
                     metadata={
                         "args": [arg.arg for arg in node.args.args],
-                        "decorators": [d.id if hasattr(d, "id") else str(d) 
-                                     for d in node.decorator_list],
+                        "returns": ast.unparse(node.returns) if node.returns else None,
+                        "decorators": [self._get_decorator_name(d) for d in node.decorator_list],
                         "is_async": isinstance(node, ast.AsyncFunctionDef),
                     }
                 )
                 functions.append(element)
         return functions
+
+    def _get_decorator_name(self, decorator):
+        """Extract decorator name safely."""
+        if hasattr(decorator, 'id'):
+            return decorator.id
+        elif hasattr(decorator, 'attr'):
+            return f"{decorator.value.id}.{decorator.attr}"
+        return ast.unparse(decorator)
     
     def extract_classes(self, tree: ast.AST) -> List[CodeElement]:
         """Extract all class definitions."""

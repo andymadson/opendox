@@ -1,0 +1,9 @@
+llm:
+  model: deepseek-coder:1.3b
+  max_tokens: 300
+ignore:
+  - tests/
+  - __pycache__/
+output:
+  format: mkdocs
+  theme: material
