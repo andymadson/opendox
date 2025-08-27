@@ -1,0 +1,64 @@
+# Edit docs_output/mkdocs.yml
+@"
+site_name: OPENDOX
+site_description: Automated Documentation Generator
+site_url: https://github.com/andymadson/opendox
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+  - API Reference:
+    - CLI: api/cli.md
+    - Core:
+      - Pipeline: api/pipeline.md
+      - File Discovery: api/file_discovery.md
+    - Parsers:
+      - Python Parser: api/python_parser.md
+    - Generators:
+      - LLM Generator: api/llm_generator.md
+    - Formatters:
+      - MkDocs: api/mkdocs_formatter.md
+
+plugins:
+  - search
+  - autorefs
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+"@ | Out-File -FilePath "docs_output\mkdocs.yml" -Encoding UTF8

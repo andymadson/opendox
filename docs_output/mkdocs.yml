@@ -1,0 +1,94 @@
+site_name: OPENDOX
+site_description: Automated documentation for OPENDOX
+site_author: OPENDOX
+repo_url: https://github.com/andymadson/opendox
+repo_name: andymadson/opendox
+edit_uri: edit/main/docs/
+theme:
+  name: material
+  language: en
+  palette:
+  - media: '(prefers-color-scheme: light)'
+    scheme: default
+    primary: indigo
+    accent: indigo
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+  - media: '(prefers-color-scheme: dark)'
+    scheme: slate
+    primary: indigo
+    accent: indigo
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+  - navigation.tabs
+  - navigation.sections
+  - navigation.expand
+  - navigation.path
+  - navigation.top
+  - navigation.footer
+  - navigation.indexes
+  - search.suggest
+  - search.highlight
+  - search.share
+  - content.code.copy
+  - content.code.select
+  - content.code.annotate
+  - toc.integrate
+  - toc.follow
+  icon:
+    logo: material/library
+    repo: fontawesome/brands/github
+plugins:
+- search
+- autorefs
+markdown_extensions:
+- pymdownx.highlight
+- pymdownx.superfences
+- pymdownx.tabbed
+- pymdownx.details
+- pymdownx.snippets
+- pymdownx.keys
+- pymdownx.caret
+- pymdownx.mark
+- pymdownx.tilde
+- pymdownx.smartsymbols
+- admonition
+- attr_list
+- md_in_html
+- footnotes
+- tables
+- def_list
+- pymdownx.tasklist
+- pymdownx.emoji
+- toc
+extra:
+  social:
+  - icon: fontawesome/brands/github
+    link: https://github.com/andymadson/opendox
+  - icon: fontawesome/brands/python
+    link: https://pypi.org/project/opendox/
+  - icon: fontawesome/brands/twitter
+    link: https://twitter.com/
+  generator: false
+  version:
+    provider: mike
+copyright: Copyright &copy; 2025 - Generated with <a href="https://github.com/andymadson/opendox">OPENDOX</a>
+nav:
+- Home: index.md
+- API Reference:
+  - app: api/app.md
+  - build_docs: api/build_docs.md
+  - cache: api/cache.md
+  - cache_manager: api/cache_manager.md
+  - config: api/config.md
+  - config_loader: api/config_loader.md
+  - error_handler: api/error_handler.md
+  - main: api/main.md
+  - test_parser: api/test_parser.md
+  - test_pipeline: api/test_pipeline.md

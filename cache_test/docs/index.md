@@ -1,3 +1,0 @@
-# core
-
-Documentation for core

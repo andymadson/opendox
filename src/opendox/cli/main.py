@@ -66,23 +66,24 @@ def init(
     console.print("📦 Repository validation... [dim](coming soon)[/dim]")
 
 @app.command()
-@app.command()
 def generate(
     path: Path = typer.Argument(Path("."), help="Repository path"),
     output: Path = typer.Option(Path("./docs"), "--output", "-o", help="Output directory"),
     model: str = typer.Option("deepseek-coder:1.3b", "--model", "-m", help="LLM model to use"),
     max_files: int = typer.Option(10, "--max-files", help="Maximum files to process"),
+    no_incremental: bool = typer.Option(False, "--no-incremental", help="Force regenerate all files"),
 ):
     """Generate documentation from code."""
     console.print(f"[bold blue]Generating documentation...[/bold blue]")
     console.print(f"Source: {path}")
     console.print(f"Output: {output}")
     console.print(f"Model: {model}")
+    console.print(f"Incremental: {not no_incremental}")
     
     from opendox.core.pipeline import DocumentationPipeline
     
     pipeline = DocumentationPipeline(model=model)
-    pipeline.generate(path, output, max_files=max_files)
+    pipeline.generate(path, output, max_files=max_files, incremental=not no_incremental)
     
     console.print(f"[bold green]Documentation generated in {output}[/bold green]")
     console.print(f"Run 'mkdocs serve' in {output} to view")

@@ -1,0 +1,58 @@
+{
+  "generated_at": "2025-08-27T14:32:54.251514",
+  "modules_count": 10,
+  "total_functions": 29,
+  "total_classes": 8,
+  "modules": [
+    {
+      "name": "build_docs",
+      "functions": 1,
+      "classes": 0
+    },
+    {
+      "name": "test_pipeline",
+      "functions": 5,
+      "classes": 0
+    },
+    {
+      "name": "test_parser",
+      "functions": 1,
+      "classes": 0
+    },
+    {
+      "name": "app",
+      "functions": 4,
+      "classes": 1
+    },
+    {
+      "name": "main",
+      "functions": 5,
+      "classes": 0
+    },
+    {
+      "name": "cache",
+      "functions": 5,
+      "classes": 1
+    },
+    {
+      "name": "cache_manager",
+      "functions": 3,
+      "classes": 1
+    },
+    {
+      "name": "config",
+      "functions": 0,
+      "classes": 3
+    },
+    {
+      "name": "config_loader",
+      "functions": 2,
+      "classes": 1
+    },
+    {
+      "name": "error_handler",
+      "functions": 3,
+      "classes": 1
+    }
+  ]
+}

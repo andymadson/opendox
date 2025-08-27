@@ -1,0 +1,12 @@
+{
+  "build_docs.py": "0ab6ad90580f68c3618c044a2ae259ea",
+  "test_pipeline.py": "0c1d3811e5bb5ea4f087b40756fd59cc",
+  "tests\\test_parser.py": "7b323bcab083790508728381e51c9dc3",
+  "sample_app\\backend\\app.py": "f2d9ef37fc31900306c5d470ca3e6220",
+  "src\\opendox\\cli\\main.py": "3b162ff226c4d2cd0dc8090fef9c1ded",
+  "src\\opendox\\core\\cache.py": "ae3e2704ad30040c1c57a2c43a47b472",
+  "src\\opendox\\core\\cache_manager.py": "91a87e2bd6783cfebdec11e26103e770",
+  "src\\opendox\\core\\config.py": "ccb3985a1c013fd566d31b5f308892d2",
+  "src\\opendox\\core\\config_loader.py": "eefa6ce644ca90cf546d6c5bfb01743f",
+  "src\\opendox\\core\\error_handler.py": "d96cb823d9bc18506807dac372a91ee6"
+}

@@ -1,9 +1,13 @@
+@"
 llm:
-  model: deepseek-coder:1.3b
-  max_tokens: 300
+  model: deepseek-coder:6.7b
+  max_tokens: 500
+  temperature: 0.3
 ignore:
   - tests/
   - __pycache__/
+  - .venv/
 output:
   format: mkdocs
   theme: material
+"@ | Out-File -FilePath ".opendox.yml" -Encoding UTF8

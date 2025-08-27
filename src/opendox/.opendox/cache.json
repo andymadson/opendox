@@ -1,0 +1,12 @@
+{
+  "src\\opendox\\__init__.py": "bf26bd6b2118639a6059d85716919b3d",
+  "src\\opendox\\__main__.py": "1e86838278882fd508cee97f706a25e7",
+  "src\\opendox\\cache\\__init__.py": "d41d8cd98f00b204e9800998ecf8427e",
+  "src\\opendox\\cli\\__init__.py": "43bab3384c0684f9cde76b7ccf374510",
+  "src\\opendox\\cli\\__main__.py": "6ca60dd89a9ed25229469c9ef58bbda5",
+  "src\\opendox\\core\\config.py": "ccb3985a1c013fd566d31b5f308892d2",
+  "src\\opendox\\core\\config_loader.py": "eefa6ce644ca90cf546d6c5bfb01743f",
+  "src\\opendox\\core\\cache_manager.py": "91a87e2bd6783cfebdec11e26103e770",
+  "src\\opendox\\cli\\main.py": "33cab9c9b896c162d04ebde22dc5810b",
+  "src\\opendox\\core\\cache.py": "e34fd5f74186d709b3138df4c6ad3fef"
+}
