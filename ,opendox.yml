@@ -2,7 +2,7 @@
 llm:
   model: deepseek-coder:6.7b
   max_tokens: 500
-  temperature: 0.3
+  temperature: 0.5
 ignore:
   - tests/
   - __pycache__/
